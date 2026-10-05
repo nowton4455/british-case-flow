@@ -355,11 +355,11 @@ begin
     coalesce(nullif(trim(p_matter_title), ''), trim(v_enquiry.full_name) || ' — ' || v_enquiry.category),
     'IMMIGRATION',
     v_enquiry.category,
-    'OPEN'::public.matter_status,
+    'READY_TO_OPEN'::public.matter_status,
     'NOT_SENT'::public.engagement_state,
     v_enquiry.id,
     v_staff_id,
-    now(),
+    null,
     auth.uid()
   )
   returning id into v_matter_id;
